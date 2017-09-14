@@ -1,0 +1,31 @@
+128 128 64        !nx,ny,nz
+128.0 128.0 64.0  !lx,ly,lz
+0.05  1.0         !dt0,ga
+50 10 0           !nzf,nzs,nzs1
+0 0.0             !nIC_tr, theta -- pick the relation of crystal and global axes
+1 0 1.0           !nIC_P, nIC_readTV,magInitP 
+5 298.0           !nIC_matconst,tem
+0 0 0             !nO_const, nO_eigen, nO_grad
+1 2               !nO_start, nO_nrg
+0 1000 100        !nstop, TSstop, TSoutput
+
+0 1000000 0.01 48      !nNoise, TSnoise, magNoise, n_randseed
+
+1                  !nG (gradient terms)
+0.6 0.0 0.3 0.3 ! g11,g12,g44,gm44
+
+1                 !nS (elastic terms)
+1 1 1.            !nS_bc,nS_SG,mult
+0.0 0.0 0.0       !u0x,u0y,u0z
+0 0 0             !nSo_strn, nSo_disp, nSo_strs
+0.0 0.0 0.0       !F11, F12, F44 F=sf in the unit of Vm^2N^-1
+0.0,0.0,0.0,10,2  !sa
+
+1                !nE (electric terms)
+50.0  50.0  50.0  !eka1,eka2,eka3
+0 0 0            !nEo_Efield,nEo_phi,nEo_susc 
+1 0 0 0 0 1.0       !nE_bc,md1,md2,md3,index_3D, magdp3
+
+1 -1 100          !nE_elecshape, TSphi0, TSdphi
+0.0 0.0          !vE_phi0, vE_dphi
+64 64 10 0 0      !vE_tipx,vE_tipy,vE_tipHWHM,vE_tipwidth,vE_elecsize
